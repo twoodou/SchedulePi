@@ -4,55 +4,12 @@
 <head>
 	<title>JHD - Daily Cutting Schedule</title>
 	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-	<style type="text/css">
-		table.tableizer-table {
-			font-size: 28px;
-			border: 1px solid #CCC;
-			font-family: Arial, Helvetica, sans-serif;
-			margin: 0 auto;
-		}
-
-		.tableizer-table td {
-			padding: 4px;
-			margin: 3px;
-			border: 1px solid #CCC;
-		}
-
-		.tableizer-table th {
-			background-color: #104E8B;
-			color: #FFF;
-			font-weight: bold;
-		}
-
-		#contain {
-			height: 1000px;
-			overflow-y: scroll;
-		}
-
-		#table_scroll {
-			width: 100%;
-			margin-top: 100px;
-			margin-bottom: 100px;
-			border-collapse: collapse;
-		}
-
-		#table_scroll thead th {
-			padding: 10px;
-			/* background-color: #ea922c; */
-			/* color: #fff; */
-		}
-
-		#table_scroll tbody td {
-			padding: 10px;
-			/* background-color: #ed3a86; */
-			/* color: #fff; */
-		}
-	</style>
 	<div id="contain">
-		<table id="table_scroll" class="tableizer-table" style="text-align:center">
+		<table id="table_scroll" class="tableizer-table">
 			<thead>
 				<tr class="tableizer-firstrow">
 					<th>ProductID</th>
@@ -162,23 +119,7 @@
 			   </tbody>
 		</table>
 	</div>
-	<script>
-		var my_time;
-		$(document).ready(function () {
-			pageScroll();
-		});
-
-		function pageScroll() {
-			var objDiv = document.getElementById("contain");
-			objDiv.scrollTop = objDiv.scrollTop + 1;
-			$('p:nth-of-type(1)').html('scrollTop : ' + objDiv.scrollTop);
-			$('p:nth-of-type(2)').html('scrollHeight : ' + objDiv.scrollHeight);
-			if (objDiv.scrollTop == (objDiv.scrollHeight - 1000)) {
-				objDiv.scrollTop = 0;
-			}
-			my_time = setTimeout('pageScroll()', 10);
-		}
-	</script>
+	<script src="./logic.js"></script>
 </body>
 
 </html>
